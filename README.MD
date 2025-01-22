@@ -1,5 +1,5 @@
 # ShowCase
-[![ShowCase](https://raw.githubusercontent.com/Vlvin/DiceGame/main/ShowCase.mp4)]
+https://raw.githubusercontent.com/Vlvin/DiceGame/main/ShowCase.mp4
 
 
 #" Installation
