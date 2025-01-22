@@ -1,8 +1,9 @@
 # ShowCase
-https://raw.githubusercontent.com/Vlvin/DiceGame/main/ShowCase.mp4
+
+![ShowCase](https://raw.githubusercontent.com/Vlvin/DiceGame/main/ShowCase.mp4)
 
 
-#" Installation
+# Installation
 ```sh
 git clone --depth=1 git@github.com:Vlvin/DiceGame
 ```
