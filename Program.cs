@@ -1,5 +1,6 @@
 ﻿using DiceGame.src;
 using System.Security.Cryptography;
+using ConsoleTables;
 
 namespace DiceGame
 {
@@ -17,6 +18,20 @@ namespace DiceGame
             return result;
         }
 
+        public static double WinProbability(Die mine, Die oposite) 
+        {
+          var winnings = 0;
+          foreach (var myface in mine.Faces) 
+          {
+            foreach (var opface in oposite.Faces) 
+            {
+              winnings += Convert.ToInt32(myface > opface);
+            }
+          }
+
+          return winnings / Convert.ToDouble(mine.Faces.Count * oposite.Faces.Count);
+        }
+
         public static void Main(String[] args)
         {
             List<Die> dice = [];
@@ -29,6 +44,13 @@ namespace DiceGame
                 Console.WriteLine(e.Message);
                 Environment.Exit(1);
             }
+            Console.WriteLine("Win Probability");
+            var table = new ConsoleTable(new string[] {"User \\ Computer"}.Concat(dice.Select(die => $"Die {die.ToString()}")).ToArray());
+            foreach (var die in dice)
+            {
+              table.AddRow(new string[] {$"Die {die.ToString()}"}.Concat(dice.Select(die2 => $"{WinProbability(die, die2)}")).ToArray());
+            }
+            table.Write(Format.Alternative);
             var game = new Game();
             game.Run(dice);
         }
