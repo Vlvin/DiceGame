@@ -22,11 +22,8 @@ namespace DiceGame.src
                     throw new GameException($"'{face}' is not an integer");
                 }
             }
-        }
-
-        public int Roll()
-        {
-            return RandomNumberGenerator.GetItems(new ReadOnlySpan<int>(this.Faces.ToArray()), 1)[0];
+            if (Faces.Count < 2)
+              throw new GameException($"You cant roll die with only {Faces.Count} sides");
         }
 
         override public String ToString()
