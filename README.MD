@@ -1,4 +1,8 @@
-# Installation
+# ShowCase
+![Watch the video](https://raw.githubusercontent.com/Vlvin/DiceGame/main/ShowCase.mp4)
+
+
+#" Installation
 ```sh
 git clone --depth=1 git@github.com:Vlvin/DiceGame
 ```
@@ -27,3 +31,4 @@ for example 6d in args looks like this
 ```
 1,2,3,4,5,6
 ```
+
